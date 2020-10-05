@@ -1,0 +1,124 @@
+<!--
+    En HTML, ceci est un COMMENTAIRE MULTILIGNES
+    car commence par '<!--' et finit par '- - >' (sans espaces)
+    => n'est pas exécuté par l'ordinateur
+-->
+<script type="text/javascript" src="commun/ProgramsEngine.js"></script>
+
+<!-- TD1 Machines à registres -->
+<script type="text/javascript" src="TD1-registres/RegistersMachine.js"></script>
+<script type="text/javascript" src="TD1-registres/TD1_1-Definition.js"></script>
+<script type="text/javascript" src="TD1-registres/TD1_2-ArithmeticUtils.js"></script>
+<script type="text/javascript" src="TD1-registres/TD1_3-AlgorithmicObjects.js"></script>
+
+
+<!-- TD 2 Machine de Peano - Décommenter pour exécuter les algorithmes
+<script type="text/javascript" src="TD2-peano/PeanoMachine.js"></script>
+<script type="text/javascript" src="TD2-peano/TD2_1.js"></script>
+-->
+
+<html>
+<h1>Exécuter</h1>
+<ul>
+    <li>Ouvrir le fichier dans un navigateur internet.</li>
+</ul>
+
+
+<h1>Voir un programme tourner</h1>
+Quelque soit le navigateur utilisé, il s'agit d'ouvrir la Console disponible dans les outils de développeur.
+
+<ul>
+    <li>
+        <h2>Google Chrome</h2>
+        <ol>
+            <li>Ouvrir le fichier dans un navigateur internet.</li>
+            <li>Menu->More tools->Developer tools <i>ou CTRL+SHIFT+I</i></li>
+            <li>Onglet Console</li>
+        </ol>
+    </li>
+</ul>
+
+
+
+
+<h1>Modifier un programme/un exercice</h1>
+<h2>Fichiers Javascript de TD</h2>
+<p>
+    Chaque programme demandé en TD est dans son propre fichier de type Javascript (extension .js).<br/> Ouvrez un fichier TD dans un éditeur de texte pour lire ses commentaires, le comprendre et le modifier.<br/> Vous y trouverez quelque chose comme ça
+    :
+    <br/>
+    <code>
+        //cette ligne est commentée grâce aux '//' est n'est donc pas exécutée <br/>
+       <p>
+           //ci-dessous vos registres <br/>
+            rm.etat = { <br/>
+                //choix des valeurs<br/>
+                //changez les et observez l'état final résultant<br/>
+                R1: 777,<br/>
+                R2: 888<br/>
+            };<br/>
+        </p>
+
+        <p>
+        rm.programme_NOM-PROGRAMME = function() {<br/>
+            //Programme : ici doivent être vos instructions<br/>
+        }<br/>
+        </p>
+    </code>
+</p>
+
+
+<h2>Instructions de TD écrites en Javascript</h2>
+<ul>
+    <li>
+        Remise à 0 (reset) : <code>rm.remise_a_zero('R'x);</code><br/>
+        <p>
+            Exemple : <code>rm.remise_a_zero('R1');</code>
+        </p>
+    </li>
+
+    <li>
+        Incrément (++) : <code>rm.increment('R'x);</code><br/>
+        <p>
+            Exemple : <code>rm.increment('R1');</code>
+        </p>
+    </li>
+
+
+    <li>
+        Tant que != : <code>rm.tant_que_different('R'x, 'R'y,<br/>
+            function() { // faire    <br/>
+                //Programme tant que<br/>
+            }<br/>
+        );</code><br/>
+        <p>
+            Exemple : <code>rm.tant_que_different('R1', 'R2',<br/>
+                function() { // faire<br/>
+        
+                    rm.increment('R2'); //R2++<br/>
+                }<br/>
+            );</code>
+        </p>
+    </li>
+</ul>
+
+<h2>Éditeur de texte</h2>
+<p>
+    <a href="https://code.visualstudio.com/">Visual Studio Code</a> est léger, flexible et répandu.<br/> Peuvent sinon vous intéresser SublimeText, <a href="https://www.jetbrains.com/idea/download/">Intellij</a>, Eclipse, Visual Studio, Netbeans...<br/>    Vous verrez que ce sont plus que des éditeurs de texte : ce sont des <a href="https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement">IDE</a>.
+</p>
+
+<h1>TD2 : Machine de Peano</h1>
+<p>
+    Les expressions données dans le TD peuvent se coder directement en Javascript. Ainsi nous pourrions avoir :<br/>
+    <code>
+        expr = 0;<br/>
+        ++expr; //expr = 1<br/>
+        --expr; //expr = 0<br/>
+
+        function NOM_DE_MA_FONCTION(ARG0, ARG1, ARG2, ...){<br/>
+            return 0;
+        }<br/>
+    </code>
+</p>
+
+</html>
