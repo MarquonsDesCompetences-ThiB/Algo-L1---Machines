@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>L1 : Algorithmie fonctionnelle</title>
+    <meta name="description" content="Visualisation informatique de TDs d'algorithmie fonctionnelle en L1">
+    <meta name="keywords" content="machine, algorithme, programme, état, instruction, fonctionnel, séquence, itératif, récursif, JavaScript">
+    <meta name="author" content="Thibaut BATAL">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<!--
+    En HTML, ceci est un COMMENTAIRE MULTILIGNES
+    car commence par '<!--' et finit par '- - >' (sans espaces)
+    => n'est pas exécuté par l'ordinateur
+-->
+<script type="text/javascript" src="../commun/ProgramsEngine.js"></script>
+
+<!-- TD1 Machines à registres -->
+<script type="text/javascript" src="TD1-registres/RegistersMachine.js"></script>
+<script type="text/javascript" src="TD1-registres/TD1_1-Definition.js"></script>
+<script type="text/javascript" src="TD1-registres/TD1_2-ArithmeticUtils.js"></script>
+<script type="text/javascript" src="TD1-registres/TD1_3-AlgorithmicObjects.js"></script>
+
+
+<!-- TD 2 Machine de Peano - Décommenter pour exécuter les algorithmes
+<script type="text/javascript" src="TD2-peano/PeanoMachine.js"></script>
+<script type="text/javascript" src="TD2-peano/TD2_1.js"></script>
+-->
+
+<body>
+    <header>
+        Pour vous accompagner dans votre travail personnel et valider vos prises de notes, voici un guide pour exécuter, observer et implémenter les machines faites théoriquement en TD. Cela avec des formulations très proches du pseudo-code utilisé.<br/>
+
+        <p>
+            Temps de lecture estimé : 3-5min
+        </p>
+    </header>
+
+    <nav>
+        <h2>Bon dev' !</h2>
+        <ol>
+            <li>
+                <a href="#how-to">Utiliser les fichiers sources</a>
+                <ol>
+                    <li>
+                        <a href="#ht-a">Télécharger</a>
+                    </li>
+                    <li>
+                        <a href="#ht-b">Exécuter & Observer</a>
+                    </li>
+
+                    <li>
+                        <a href="#ht-d">Mettre en pause : <cite>breakpointer</cite></a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="#td1">TD1 : Machines à Registres</a>
+            </li>
+            <li>
+                <a href="#td2">TD2 : Machines de Peano</a>
+            </li>
+        </ol>
+    </nav>
+
+    <article>
+
+        <h1 id="how-to">1. Utiliser les fichiers sources</h1>
+        <p>
+            <h2 id="ht-a">a) Télécharger</h2>
+            <ol>
+                <li>Accéder au menu de téléchargement via le bouton <cite style="color:green ">Code</cite> vert</li>
+                <li>Télécharger tous les fichiers d'un coup dans leur version actuelle avec <cite>Download ZIP</cite> ou...</li>
+                <li>...ou télécharger
+                    <a href="https://desktop.github.com/ " title="Github Desktop, outil de collaboration de fichiers ">GitHub Desktop</a> et utiliser <cite>Open with GitHub Desktop</cite> qui vous permettra en un lieu de contrôler les mises à jour des
+                    fichiers sur ce dépôt (et tous les autres que vous ajouterez et créerez) et en fusionner les modifications avec celles que vous avez faites sur votre ordinateur.
+                </li>
+            </ol>
+            <figure style="display:inline-block ">
+                <figcaption>
+                    Bouton <cite style="color:green ">Code</cite> à cliquer pour déployer le menu de téléchargement
+                </figcaption>
+                <img src="../imgs/github/Git_Repo_Code-Button.jpg " alt="Bouton 'Code' vert à cliquer pour déployer le menu de téléchargement " title="Bouton 'Code' vert à cliquer pour déployer le menu de téléchargement " height=300/>
+            </figure>
+
+            <figure style="display:inline-block ">
+                <figcaption>
+                    Menu du bouton <cite style="color:green ">Code</cite>
+                </figcaption>
+                <img src="../imgs/github/Git_Repo_Code-Button_deployed.jpg " alt="Menu du bouton 'Code' " title="Menu du bouton 'Code' " height=300/>
+            </figure>
+
+            <h2 id="ht-b">b) Exécuter & Observer</h2>
+            <p>
+                Du dossier téléchargé, ouvrir le fichier
+                <cite title="Page principale de notre micro-site local ">machines/<a href="https://github.com/MarquonsDesCompetences-ThiB/Algo-L1---Machines/blob/main/machines/index.html ">index.html</a></cite> dans un navigateur internet (<cite>Mozilla
+                Firefox</cite>,
+                <cite>Google Chrome</cite>, <cite>Internet Explorer</cite>....) : Double-cliquer sur le fichier ou faire <cite title="Bouton de la souris ">clic droit</cite>-><cite>Ouvrir avec...</cite><br/> Ce fichier inclut le texte que vous voyez là
+                comme les fichiers Javascript qui implémentent le début des programmes des TDs. Ces programmes ont eu le temps de tourner en arrière-plan !
+            </p>
+
+            <h3>Voir un programme exécuté</h3>
+            <p>
+                Quelque soit le navigateur utilisé, il s'agit d'ouvrir la <cite>Console</cite> disponible dans les <cite>outils de développeur</cite>.<br/> Avec les fichiers de base, vous verrez s'exécuter les différents programmes mais seulement TD1_1-Definition
+                est implémenté et fonctionnel (dans le fichier, testez de changer les valeurs de l'état initial !).
+            </p>
+            <aside>
+                <h3>Ouvrir la console développeurs par navigateur</h3>
+                <nav>
+                    <ol>
+                        <li>
+                            <a href="01-Firefox">Mozilla Firefox</a></li>
+                        <li>
+                            <a href="#02-Chrome">Google Chrome</a></li>
+                        <li>
+                            <a href="#03-Edge">Microsoft Edge</a>
+                        </li>
+                    </ol>
+                </nav>
+                <ol>
+                    <li>
+                        <h3 id="01-Firefox">Mozilla Firefox</h3>
+                        <ol>
+                            <li>Ouvrir le fichier dans Firefox.</li>
+                            <li>
+                                Aller dans Menu->Développement web->Console web <i>ou faire CTRL+<cite title="SHIFT">MAJ</cite>+K</i><br/>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">2.1) Ouvrir le menu Firefox</figcaption>
+                                    <img src="../imgs/browsers/firefox/Firefox_Menu.jpg" alt="Barre d'outils Firefox" title="Barre d'outils Firefox" width=200/>
+                                </figure>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">2.2) Ouvrir le menu Développements web</figcaption>
+                                    <img src="../imgs/browsers/firefox/Firefox_Menu_Developpemen-web.jpg " alt="Menu Firefox" title="Menu Firefox" width=200/>
+                                </figure>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">2.3) Ouvrir la Console Web</figcaption>
+                                    <img src="../imgs/browsers/firefox/Firefox_Developpemen-web_Console-web.jpg " alt="Menu d'outils de développement web Firefox" title="Menu d'outils de développement web Firefox" width=200 />
+                                </figure>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        <h3 id="02-Chrome">Google Chrome</h3>
+                        <ol>
+                            <li>Ouvrir le fichier dans Chrome.</li>
+                            <li>Aller dans Menu->More tools->Developer tools <i>ou faire CTRL+<cite title="SHIFT ">MAJ</cite>+I</i><br/>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">3.1) Ouvrir le menu Chrome</figcaption>
+                                    <img src="../imgs/browsers/chrome/Chrome_Menu.jpg" alt="Barre de menus de customisation et de contrôle de Chrome" title="Barre de menus de customisation et de contrôle de Chrome" width=200/>
+                                </figure>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">3.2) Ouvrir le menu Développements web</figcaption>
+                                    <img src="../imgs/browsers/chrome/Chrome_Menu_Developer-tools.jpg " alt="Menu d'outils développeurs de Chrome" title="Menu d'outils développeurs de Chrome" width=200/>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">3.3) Aller dans l'onglet <cite>Console</cite></figcaption>
+                                    <img src="../imgs/browsers/chrome/Chrome_Developer-tools_Console.jpg " alt="Menu d'outils développeurs de Chrome" title="Menu d'outils développeurs de Chrome" width=200/>
+                                </figure>
+
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        <h3 id="03-Edge">Microsoft Edge</h3>
+                        <ol>
+                            <li>Ouvrir le fichier dans Edge.</li>
+                            <li>Aller dans Menu->More tools->Developer tools <i>ou faire CTRL+<cite title="SHIFT ">MAJ</cite>+I</i>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">3.1) Ouvrir le menu paramètres de Edge</figcaption>
+                                    <img src="../imgs/browsers/edge/Microsoft-Edge_Menu.jpg" alt="Barre de menus Edge" title="Barre de menus Edge" width=200/>
+                                </figure>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">3.2) Ouvrir le menu <cite>Plus d'outils</cite>-><cite>Outils développeurs</cite></figcaption>
+                                    <img src="../imgs/browsers/edge/Microsoft-Edge_More-tools_Developer-tools.jpg " alt="Menu de paramètres Edge" title="Menu de paramètres Edge" width=200/>
+                                </figure>
+                                <figure style="display:inline-block">
+                                    <figcaption style="font-style:italic ">3.3) Aller dans l'onglet <cite>Console</cite></figcaption>
+                                    <img src="../imgs/browsers/edge/Microsoft-Edge_Developer-tools_Console.jpg " alt="Outis pour développeurs Edge" title="Outis pour développeurs Edge" width=200 />
+                                </figure>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </aside>
+
+            <h2 id="ht-c">c) Modifier un programme/un exercice</h2>
+            <h3>Fichiers Javascript de TD</h3>
+            <p>
+                Les programmes TD sont rangés par partie dans leur propre fichier Javascript (extension .js).
+                <ul>
+                    <li>
+                        <a href="TD1-registres/TD1_1-Definition.js ">TD1_1-Definition.js</a></li>
+                    <li>
+                        <a href="TD1-registres/TD1_2-ArithmeticUtils.js ">TD1_2-ArithmeticUtils.js</a></li>
+                    <li>
+                        <a href="TD1-registres/TD1_3-AlgorithmicObjects.js ">TD1_3-AlgorithmicObjects.js</a>
+                    </li>
+                    <li>
+                        <a href="TD2-peano/TD2_1.js ">TD2_1.js</a>
+                    </li>
+                </ul>
+                Ouvrez un fichier TD dans un <cite>éditeur de texte</cite> pour lire ses commentaires, le comprendre et le modifier.<br/> Vous y trouverez du code comme ça :
+                <br/>
+                <code style=" display:block ">
+                //cette ligne est commentée grâce aux '//' est n'est donc pas exécutée <br/>
+            <p>
+                //ci-dessous vos registres <br/>
+                    rm.etat = { <br/>
+                        //choix des valeurs<br/>
+                        //changez les et observez l'état final résultant<br/>
+                        R1: 777,<br/>
+                        R2: 888<br/>
+                    };<br/>
+                </p>
+
+                <p>
+                rm.programme_NomProgramme = function() {<br/>
+                    //Programme : ici doivent être vos instructions<br/>
+                }<br/>
+                </p>
+            </code>
+            </p>
+
+            <aside>
+                <h2>Éditeur de texte</h2>
+                <p>
+                    <a href="https://code.visualstudio.com/ ">Visual Studio Code</a> est léger, flexible et répandu.<br/> Peuvent sinon vous intéresser SublimeText, <a href="https://www.jetbrains.com/idea/download/ ">Intellij</a>, Eclipse, Visual Studio,
+                    Netbeans...
+                    <br/> Vous verrez que ce sont plus que des éditeurs de texte : ce sont des <a href="https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement "><abbr title="Integrated Development Environment ">IDE</abbr></a>.
+                </p>
+                <p>
+                    Pour ouvrir un fichier dans un <cite>éditeur de texte</cite>, passez par l'<cite>explorateur de fichiers</cite> de votre ordinateur pour faire un <cite title="bouton de la souris ">clic droit</cite> sur le fichier puis <cite>Ouvrir avec...</cite>
+                </p>
+            </aside>
+
+
+
+            <h2 id="ht-d">d) Mettre en pause un programme : <cite>breakpointer</cite></h2>
+
+            <p>
+                Vous pouvez à toute ligne mettre en pause le programme pour vérifier les valeurs connues de l'ordinateur à cet instant précis. Dans le code Javascript, avant la ligne où vous souhaitez que l'ordinateur se mette en pause, placez un <cite>breakpoint</cite>                en écrivant :<br/>
+                <code style="display:block ">
+                debugger;
+            </code><br/>Si les outils développeur du navigateur sont ouverts (sinon ouvrez-les et rafraîchissez la page), vous verrez l'interface afficher la ligne et les possibilités de voir les variables ("<cite>registres</cite>") utilisées
+                comme continuer l'exécution du code jusqu'au prochain
+                <cite>breakpoint</cite> atteint.
+            </p>
+        </p>
+
+        <h1 id="td1">2. TD1 : Machine à registres</h1>
+        <p>
+            <h2>Équivalent des instructions de TD en Javascript</h2>
+            <ul>
+                <li>
+                    Remise à 0 (reset) :
+                    <code style="display:block ">rm.remise_a_zero('R'x);</code>
+                    <i>//où x est le numéro du registre à mettre à 0</i><br/>
+                    <p>
+                        Exemple : <code style="display:block ">rm.remise_a_zero('R1');</code>
+                    </p>
+                </li>
+
+                <li>
+                    Incrément (++) : <code style="display:block ">rm.increment('R'x);</code>
+                    <i>//où x est le numéro du registre à incrémenter</i><br/>
+                    <p>
+                        Exemple : <code style="display:block ">rm.increment('R1');</code>
+                    </p>
+                </li>
+
+
+                <li>
+                    Tant que R<i>x</i>!=R<i>y</i> :<br/>
+                    <i>//où x et y sont les numéros des registres à comparer</i>
+                    <code style="display:block ">rm.tant_que_different('R'x, 'R'y,<br/>
+                        &emsp;&emsp;function() { // faire    <br/>
+                            &emsp;&emsp;&emsp;&emsp;//Programme tant que<br/>
+                &emsp;&emsp;}<br/>
+        );</code>
+                    <p>
+                        Exemple : <code style="display:block ">rm.tant_que_different('R1', 'R2',<br/>
+                            &emsp;&emsp;function() { // faire<br/>
+        
+                                &emsp;&emsp;&emsp;&emsp;rm.increment('R2'); //R2++<br/>
+                    &emsp;&emsp;}<br/>
+            );</code>
+                    </p>
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <h2>Observez et testez le fichier avec différentes valeurs !</h2>
+            <ul>
+                <li>
+                    <a href="TD1-registres/TD1_1-Definition.js">TD1_1-Definition.js</a>
+                </li>
+
+            </ul>
+        </p>
+
+        <p>
+            <h2>Implémentez les fichiers pour valider vos essais théoriques !</h2>
+            <ul>
+                <li>
+                    <a href="TD1-registres/TD1_2-ArithmeticUtils.js">TD1_2-ArithmeticUtils.js</a></li>
+                <li>
+                    <a href="TD1-registres/TD1_3-AlgorithmicObjects.js">TD1_3-AlgorithmicObjects.js</a>
+                </li>
+            </ul>
+        </p>
+
+
+        <h1 id="td2">3. TD2 : Machine de Peano</h1>
+        <p>
+            Les expressions données dans le TD peuvent se coder directement en Javascript avec de minimes modifications :
+            <ul>
+                <li>
+                    ++expr : si expr est une constante: expr+1 sinon: ++expr
+                </li>
+                <li>--expr : si expr est une constante: expr-1 sinon: --expr</li>
+                <li>Définir une fonction : function NOM_DE_MA_FONCTION(ARG0, ARG1, ARG2, ...){}</li>
+                <li>Dans une fonction, retourner une valeur : return expr;</li>
+            </ul>
+            Ainsi nous pourrions avoir :<br/>
+            <code style="display:block ">
+                    expr = 0;<br/>
+                    1+expr; //expr = 1<br/>
+                    --expr; //expr = 0<br/>
+            
+                    function NOM_DE_MA_FONCTION(ARG0, ARG1, ARG2, ...){<br/>
+                        &emsp;return 0;
+                    }<br/>
+                </code>
+        </p>
+
+        <p>
+            <h2>Implémentez le fichier !</h2>
+            <ul>
+                <li>
+                    <a href="TD2-peano/TD2_1.js">TD2_1.js</a>
+                </li>
+            </ul>
+            < </p>
+    </article>
+</body>
+
+</html>
