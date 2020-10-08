@@ -9,9 +9,9 @@ Sur un dépôt de fichiers (repository en anglais).
 Découvrir l'algorithmie fonctionnelle par l'implémentation progressive d'instructions de machines déterministes.
 
 ## Comment ?
-1. Téléchargez les fichiers (donc les codes) présents sur le dépôt.
+### 1) Téléchargez les fichiers (donc les codes) présents sur le dépôt.
 
-### Solution 1 : conseillée
+#### Solution 1 : Passer par un logiciel Git (conseillé)
 Des fichiers vont être ajoutés, d'autres modifiés... cette solution vous permettra de :
 - savoir, via le logiciel, si vos fichiers sont à jour
 - fusionner les modifications faites sur le dépôt avec celles que vous avez faites sur votre ordinateur. Les premières fois où vous le tenter, créez une copie de votre dossier actuel sur l'ordinateur pour être sûr de ne pas perdre vos ajouts : clic droit -> <cite>Créer un fichier compressé (archive)</cite>
@@ -22,7 +22,8 @@ Des fichiers vont être ajoutés, d'autres modifiés... cette solution vous perm
 ![Bouton 'Code' vert à cliquer pour déployer le menu de téléchargement ](machines/imgs/github/Git_Repo_Code-Button.jpg)
 ![Menu du bouton 'Code'](machines/imgs/github/Git_Repo_Code-Button_deployed.jpg)
 
-### Solution 2 (déconseillée)
+#### Solution 2 : Télécharger directement les fichiers (déconseillé)
 Cliquer sur <u>Code</u> (bouton vert) -> <u>Download zip</u>
 
-2. Du dossier téléchargé, ouvrez le fichier <cite title="Page principale de notre micro-site local ">machines/<a href="https://github.com/MarquonsDesCompetences-ThiB/Algo-L1---Machines/blob/main/machines/index.html ">index.html</a></cite> dans un navigateur internet (<cite>Mozilla Firefox</cite>, <cite>Google Chrome</cite>, <cite>Internet Explorer</cite>....) : Double-cliquer sur le fichier ou faire <cite title="Bouton de la souris ">clic droit</cite>-><cite>Ouvrir avec...</cite>
+### 2) Ouvrir index.html
+Du dossier téléchargé, ouvrez le fichier <cite title="Page principale de notre micro-site local ">machines/<a href="https://github.com/MarquonsDesCompetences-ThiB/Algo-L1---Machines/blob/main/machines/index.html ">index.html</a></cite> dans un navigateur internet (<cite>Mozilla Firefox</cite>, <cite>Google Chrome</cite>, <cite>Internet Explorer</cite>....) : Double-cliquer sur le fichier ou faire <cite title="Bouton de la souris ">clic droit</cite>-><cite>Ouvrir avec...</cite>
