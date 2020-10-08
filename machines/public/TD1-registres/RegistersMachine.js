@@ -57,17 +57,32 @@ class RegistersMachine extends ProgramsEngine {
     tant_que_different(nom_registre_1, nom_registre_2, program) {
         console.log('\t\tDEBUT tant_que');
 
-        //"tant que différent" en Javascript
-        while (this.etat[nom_registre_1] != this.etat[nom_registre_2]) {
-            //affichage
-            console.log('\t\t\t' + nom_registre_1 +
-                ' != ' +
-                nom_registre_2 +
-                ' (' + this.etat[nom_registre_1] +
-                ' != ' +
-                this.etat[nom_registre_2] + ') :');
+        //si nom_registre_2 est en fait une constante
+        if (typeof nom_registre_2 == 'number') {
+            //"tant que différent" en Javascript
+            while (this.etat[nom_registre_1] != nom_registre_2) {
+                //affichage
+                console.log('\t\t\t' + nom_registre_1 +
+                    ' != ' +
+                    nom_registre_2 +
+                    ' (' + this.etat[nom_registre_1] + ') :');
 
-            program();
+                program();
+            }
+
+        } else { //sinon on considère que c'est bien un nom de registre
+            //"tant que différent" en Javascript
+            while (this.etat[nom_registre_1] != this.etat[nom_registre_2]) {
+                //affichage
+                console.log('\t\t\t' + nom_registre_1 +
+                    ' != ' +
+                    nom_registre_2 +
+                    ' (' + this.etat[nom_registre_1] +
+                    ' != ' +
+                    this.etat[nom_registre_2] + ') :');
+
+                program();
+            }
         }
 
         //affichage
